@@ -1,0 +1,30 @@
+#mainNavWrapper {
+    margin-bottom: 10px;
+}
+#scmAdminWrapper {
+    max-width: 100%;
+    padding: 20px;
+    background: #EAEAEA;
+}
+#dynamicView {
+    margin-top: 20px;
+}
+.scm .course-name {
+
+}
+.scm .course-description {
+    width: 50%;
+}
+.scm .course-action {
+    width: 250px;
+}
+.scm .button-wide-holder {
+    margin-bottom: 20px;
+}
+.scm .userAdditionalInfoTable {
+    margin-top: 20px;
+    display: none;
+}
+.scm td.userMoreInfoData {
+    width: 35%;
+}
