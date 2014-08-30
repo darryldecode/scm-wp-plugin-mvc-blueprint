@@ -1,15 +1,13 @@
 {
     "require": {
         "illuminate/database": "*",
-        "illuminate/validation": "*",
-        "swiftmailer/swiftmailer": "5.2.*@dev"
+        "illuminate/validation": "*"
     },
     "autoload": {
         "classmap": [
             "classes",
             "controller",
-            "model",
-            "services"
+            "model"
         ]
     }
 }

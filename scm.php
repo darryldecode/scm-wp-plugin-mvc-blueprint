@@ -6,6 +6,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use SCM\Classes\SCMInstaller as Installer;
 use Illuminate\Database\Capsule\Manager as Capsule;
+use SCM\View\SCMAdminPageHandle;
+use SCM\View\SCMFrontPageHandle;
 
 /**
  * Plugin Name: SCM MVC Blueprint System
@@ -71,7 +73,7 @@ class SCMBootstrap {
      */
     public static function defineConstants()
     {
-        define('SCM_FOLDER_NAME',   'scm');
+        define('SCM_FOLDER_NAME',   'scm-wp-plugin-mvc-blueprint');
         define('SCM_ROUTE_HANDLE',	'scmModule');
         define('SCM_PATH',	    dirname(__FILE__) . '/' );
         define('SCM_URI',	    plugins_url().'/'.SCM_FOLDER_NAME.'/');
@@ -142,11 +144,11 @@ class SCMBootstrap {
      */
     public function displayAdminMenu()
     {
-        $page_title		= 'SCM Queue';
-        $menu_title		= 'Daily Deal Queue System';
+        $page_title		= 'SCM MVC Blueprint';
+        $menu_title		= 'SCM MVC Blueprint';
         $capability		= 'activate_plugins';
         $menu_slug		= SCM_ROUTE_HANDLE;
-        $function		= 'scmQueueAdminMainPage';
+        $function		= array($this,'doAdminDisplay');
         $icon_url		= SCM_URI_IMG.'book-icon.png';
         $position		= 4;
 
@@ -188,6 +190,7 @@ class SCMBootstrap {
 
     /**
      * load scripts on front end
+     *
      * @since 1.0
      */
     public static function loadFrontScripts()
@@ -200,6 +203,7 @@ class SCMBootstrap {
 
     /**
      * Print relevant scripts on header ( admin )
+     *
      * @since 1.0
      */
     public static function printAdminScripts()
@@ -210,6 +214,7 @@ class SCMBootstrap {
     /**
      * Print relevant scripts on header ( front end )
      * Mostly use for ajax transactions
+     *
      * @since 1.0
      */
     public static function printFrontScripts()
@@ -225,7 +230,17 @@ class SCMBootstrap {
      */
     public static function doFrontDisplay()
     {
-        scmFrontMainPage();
+        new SCMFrontPageHandle();
+    }
+
+    /**
+     * handle the admin page display and dynamic view
+     *
+     * @since 1.0
+     */
+    public static function doAdminDisplay()
+    {
+        new SCMAdminPageHandle();
     }
 
 

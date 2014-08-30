@@ -1,16 +1,21 @@
-<?php
+<?php namespace SCM\View;
 
-if( ! function_exists('scmQueueFrontMainPage') ) :
+use SCM\Classes\SCMUtility;
+use SCM\Classes\View;
+use SCM\Model\Settings;
 
-    function scmQueueFrontMainPage()
+class SCMFrontPageHandle {
+
+    public function __construct()
     {
+
         ?>
         <!-- sorry for being slappy, just for now ! :-) -->
 
         <!-- Latest compiled and minified CSS -->
-        <?php if( \SCM\Model\Settings::isUseBuiltInCSSEnabled() ): ?>
+        <?php if( Settings::isUseBuiltInCSSEnabled() ): ?>
         <link rel="stylesheet" href="<?php echo SCM_URI_CSS.'bootstrap.min.css'; ?>">
-        <?php endif; ?>
+    <?php endif; ?>
 
         <!-- scmFrontWrapper -->
         <div class="scm" id="scmFrontWrapper">
@@ -36,9 +41,9 @@ if( ! function_exists('scmQueueFrontMainPage') ) :
                     </div>
 
                     <!-- global alert -->
-                    <?php if( \SCM\Classes\SCMUtility::hasFlashMessage() ): ?>
-                        <div class="alert alert-<?php echo \SCM\Classes\SCMUtility::getFlashMessageMode(); ?> text-center">
-                            <h4><?php echo \SCM\Classes\SCMUtility::getFlashMessage(); ?></h4>
+                    <?php if( SCMUtility::hasFlashMessage() ): ?>
+                        <div class="alert alert-<?php echo SCMUtility::getFlashMessageMode(); ?> text-center">
+                            <h4><?php echo SCMUtility::getFlashMessage(); ?></h4>
                         </div>
                     <?php endif; ?>
 
@@ -46,7 +51,7 @@ if( ! function_exists('scmQueueFrontMainPage') ) :
                     <div class="panel panel-default" id="dynamicView">
                         <div class="panel-body">
 
-                            <?php SCM\Classes\View::render(); ?>
+                            <?php View::render(); ?>
 
                         </div>
                     </div>
@@ -57,9 +62,8 @@ if( ! function_exists('scmQueueFrontMainPage') ) :
 
         </div>
 
-
-
     <?php
+
     }
 
-endif; //end function_exists
+}

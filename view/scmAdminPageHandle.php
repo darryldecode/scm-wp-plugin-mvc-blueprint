@@ -1,8 +1,11 @@
-<?php
+<?php namespace SCM\View;
 
-if( ! function_exists('scmQueueAdminMainPage') ) :
+use SCM\Classes\SCMUtility;
+use SCM\Classes\View;
 
-    function scmQueueAdminMainPage()
+class SCMAdminPageHandle {
+
+    public function __construct()
     {
         ?>
         <style>
@@ -31,19 +34,19 @@ if( ! function_exists('scmQueueAdminMainPage') ) :
                         <!-- master navigation -->
                         <div id="mainNavWrapper">
                             <div class="btn-group">
-                                <a href="<?php echo SCM\Classes\SCMUtility::adminBuildUrl(''); ?>" type="button" class="btn btn-default">
+                                <a href="<?php echo SCMUtility::adminBuildUrl(''); ?>" type="button" class="btn btn-default">
                                     <span class="glyphicon glyphicon-dashboard"></span> Dashboard
                                 </a>
-                                <a href="<?php echo SCM\Classes\SCMUtility::adminBuildUrl('state=Settings&action=index'); ?>" type="button" class="btn btn-default">
+                                <a href="<?php echo SCMUtility::adminBuildUrl('state=Settings&action=index'); ?>" type="button" class="btn btn-default">
                                     <span class="glyphicon glyphicon-wrench"></span> Settings
                                 </a>
                             </div>
                         </div>
 
                         <!-- global alert -->
-                        <?php if( \SCM\Classes\SCMUtility::hasFlashMessage() ): ?>
-                            <div class="alert alert-<?php echo \SCM\Classes\SCMUtility::getFlashMessageMode(); ?> text-center">
-                                <h4><?php echo \SCM\Classes\SCMUtility::getFlashMessage(); ?></h4>
+                        <?php if( SCMUtility::hasFlashMessage() ): ?>
+                            <div class="alert alert-<?php echo SCMUtility::getFlashMessageMode(); ?> text-center">
+                                <h4><?php echo SCMUtility::getFlashMessage(); ?></h4>
                             </div>
                         <?php endif; ?>
 
@@ -51,7 +54,7 @@ if( ! function_exists('scmQueueAdminMainPage') ) :
                         <div class="panel panel-default" id="dynamicView">
                             <div class="panel-body">
 
-                                <?php SCM\Classes\View::render(); ?>
+                                <?php View::render(); ?>
 
                             </div>
                         </div>
@@ -67,4 +70,4 @@ if( ! function_exists('scmQueueAdminMainPage') ) :
     <?php
     }
 
-endif; //end function_exists
+}
