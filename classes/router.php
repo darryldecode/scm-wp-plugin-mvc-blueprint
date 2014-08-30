@@ -168,7 +168,7 @@ class Router {
      */
     public function getStateParamValue()
     {
-        return SCMUtility::cleanText($_GET['state']);
+        return ucfirst(SCMUtility::cleanText($_GET['state']));
     }
 
     /**
