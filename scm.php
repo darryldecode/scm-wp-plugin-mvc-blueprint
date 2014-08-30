@@ -8,7 +8,7 @@ use SCM\Classes\SCMInstaller as Installer;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 /**
- * Plugin Name: SCM Application Form System
+ * Plugin Name: SCM MVC Blueprint System
  * Plugin URI: https://github.com/darryldecode
  * Description: Woo Commerce Daily Deal Queueing system
  * Version: 1.0
@@ -71,8 +71,8 @@ class SCMBootstrap {
      */
     public static function defineConstants()
     {
-        define('SCM_FOLDER_NAME',   'scm-app-form');
-        define('SCM_ROUTE_HANDLE',	'scmAppFormModule');
+        define('SCM_FOLDER_NAME',   'scm');
+        define('SCM_ROUTE_HANDLE',	'scmModule');
         define('SCM_PATH',	    dirname(__FILE__) . '/' );
         define('SCM_URI',	    plugins_url().'/'.SCM_FOLDER_NAME.'/');
         define('SCM_URI_CSS',	plugins_url().'/'.SCM_FOLDER_NAME.'/resources/css/');
