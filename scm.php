@@ -12,7 +12,7 @@ use SCM\View\SCMFrontPageHandle;
 /**
  * Plugin Name: SCM MVC Blueprint System
  * Plugin URI: https://github.com/darryldecode
- * Description: Woo Commerce Daily Deal Queueing system
+ * Description: A plugin building blueprint that embraces MVC pattern
  * Version: 1.0
  * Author: Darryl Fernandez | darrylcoder
  * Author URI: https://github.com/darryldecode
