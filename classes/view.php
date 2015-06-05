@@ -62,13 +62,12 @@ class View {
     {
         if( is_null(self::$template) )
         {
-            echo '<div class="text-center"><h4><img src="'.SCM_URI_IMG.'book-icon.png"> Sky Course Module. All Rights Reserved.</h4></div>';
+            echo '<div class="text-center"><h4><img src="'.SCM_URI_IMG.'book-icon.png"> '.SCM_PLUGIN_NAME.'. All Rights Reserved.</h4></div>';
         } else {
             $scmData = self::$data;
             $template_path = SCM_PATH.'view/'.self::$template;
             include_once "{$template_path}";
         }
-
     }
 
 }

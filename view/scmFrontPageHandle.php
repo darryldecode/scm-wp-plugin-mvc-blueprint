@@ -26,7 +26,7 @@ class SCMFrontPageHandle {
                 <!-- title -->
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        SOME HEADING
+                        <?php echo SCM_PLUGIN_NAME; ?>
                     </h3>
                 </div>
 
@@ -36,7 +36,7 @@ class SCMFrontPageHandle {
                     <!-- master navigation -->
                     <div id="mainNavWrapper">
                         <div class="btn-group">
-                            SOME NAVIGATION
+                            SOME NAVIGATION HERE..
                         </div>
                     </div>
 

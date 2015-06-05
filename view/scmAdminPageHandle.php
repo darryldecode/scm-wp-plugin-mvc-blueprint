@@ -24,7 +24,7 @@ class SCMAdminPageHandle {
                     <!-- title -->
                     <div class="panel-heading">
                         <h3 class="panel-title">
-                            <img src="<?php echo SCM_URI_IMG.'book-icon.png'; ?>" title="SCM"> SKY DAILY DEALS QUEUEING SYSTEM MODULE
+                            <img src="<?php echo SCM_URI_IMG.'book-icon.png'; ?>" title="SCM"> <?php echo SCM_PLUGIN_NAME; ?>
                         </h3>
                     </div>
 

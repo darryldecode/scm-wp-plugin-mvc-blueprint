@@ -39,7 +39,7 @@ class SCMUtility {
      */
     public static function issetOrAssign(&$var, $default = '')
     {
-        if(isset($var)) return $var;
+        if( (isset($var)) && (!empty($var)) ) return $var;
 
         return $var = $default;
     }

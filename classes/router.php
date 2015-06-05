@@ -7,14 +7,14 @@ class RouterException extends \Exception{};
 
 class Router {
 
-    const ACMBaseRoute = SCM_ROUTE_HANDLE;
+    const SCMBaseRoute = SCM_ROUTE_HANDLE;
 
     /**
-     * the route actions to be excempted in token verification
+     * the route actions to be exempted in token verification
      *
      * @var array
      */
-    protected $csrfExemptedActions = array();
+    protected $csrfExemptedRoutes = array();
 
     /**
      * the main SCM route, whether to trigger all stuffs here or not
@@ -26,13 +26,12 @@ class Router {
     /**
      * add action to be exempted in token verification
      *
-     * @param array $actions
+     * @param array $routes
      */
-    public function addCSRFExemptedActions($actions = array())
+    public function addCSRFExemptedRoutes($routes = array())
     {
-        $this->csrfExemptedActions = $actions;
+        $this->csrfExemptedRoutes = $routes;
     }
-
 
     /**
      * boots the routing and process routes
@@ -41,10 +40,9 @@ class Router {
      */
     public function boot()
     {
+        $this->setBaseRoute();
 
-        $this->baseRoute = SCMUtility::cleanText( (isset($_GET['page'])) ? $_GET['page'] : '' );
-
-        if( $this->isBaseRouteIsACM() )
+        if( $this->isBaseRouteIsSCM() )
         {
 
             if( $this->isStatePresentInQueryString() )
@@ -72,10 +70,10 @@ class Router {
                         // if request is post, make sure to verify nonce
                         if( SCMUtility::requestIsPost() )
                         {
+                            $this->normalizeGlobalPost();
 
-                            if( ! in_array($this->getActionParamValue(),$this->csrfExemptedActions) )
+                            if( ! $this->isRouteExempted() )
                             {
-
                                 if( ! $this->isNonceIsValid($this->getPostNonceValue()) )
                                 {
 
@@ -136,14 +134,14 @@ class Router {
     }
 
     /**
-     * check if the base route is ACM Route, this is the foundation of routing
+     * check if the base route is SCM Route, this is the foundation of routing
      * this will be the basis whether we will do stuffs in here or just totally ignore all
      *
      * @return bool
      */
-    protected function isBaseRouteIsACM()
+    protected function isBaseRouteIsSCM()
     {
-        if($this->baseRoute == self::ACMBaseRoute) return true;
+        if($this->baseRoute == self::SCMBaseRoute) return true;
 
         return false;
     }
@@ -265,4 +263,47 @@ class Router {
         return true;
     }
 
+    /**
+     * if query string page or req is present we will evaluate it
+     */
+    protected function setBaseRoute()
+    {
+        if( (isset($_GET['page'])) || (isset($_GET['req'])) )
+        {
+            $this->baseRoute = (isset($_GET['req'])) ? urldecode($_GET['req']) : urldecode($_GET['page']);
+        }
+    }
+
+    /**
+     * some ajax POST request like angular sends raw json encoded data, so the global
+     * $_POST does not have any data, unlike jQuery that sends url encoded data
+     * so in every request, we will evaluate if $_POST is empty then let's just normalize it
+     */
+    protected function normalizeGlobalPost()
+    {
+        if( empty($_POST) )
+        {
+            $_POST = (array) json_decode(file_get_contents("php://input"));
+        }
+    }
+
+    /**
+     * check if route is on exempted lists
+     *
+     * @return bool
+     */
+    protected function isRouteExempted()
+    {
+        $matched = false;
+
+        $state  = $this->getStateParamValue();
+        $action = $this->getActionParamValue();
+
+        foreach($this->csrfExemptedRoutes as $route)
+        {
+            if( ($route[0] == $state) && ($route[1] == $action) ) $matched = true;
+        }
+
+        return $matched;
+    }
 }

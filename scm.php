@@ -73,6 +73,7 @@ class SCMBootstrap {
      */
     public static function defineConstants()
     {
+        define('SCM_PLUGIN_NAME',   'SCM PLUGIN MVC BLUEPRINT');
         define('SCM_FOLDER_NAME',   'scm-wp-plugin-mvc-blueprint');
         define('SCM_ROUTE_HANDLE',	'scmModule');
         define('SCM_PATH',	    dirname(__FILE__) . '/' );
