@@ -291,4 +291,36 @@ class SCMUtility {
         }
     }
 
+    /**
+     * use to activate a nav if matches current given state and action
+     *
+     * @param $state
+     * @param $action
+     * @return string
+     */
+    public static function navCanActive($state, $action)
+    {
+        $currentState  = $_GET['state'];
+        $currentAction = $_GET['action'];
+
+        if( is_array($action) )
+        {
+            foreach($action as $a)
+            {
+                if( ($currentState == $state) && ($currentAction == $a) )
+                {
+                    return "active";
+                }
+            }
+        }
+        else
+        {
+            if( ($currentState == $state) && ($currentAction == $action) )
+            {
+                return "active";
+            }
+        }
+
+        return "";
+    }
 }

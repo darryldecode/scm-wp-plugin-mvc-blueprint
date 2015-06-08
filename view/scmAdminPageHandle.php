@@ -34,10 +34,10 @@ class SCMAdminPageHandle {
                         <!-- master navigation -->
                         <div id="mainNavWrapper">
                             <div class="btn-group">
-                                <a href="<?php echo SCMUtility::adminBuildUrl(''); ?>" type="button" class="btn btn-default">
+                                <a href="<?php echo SCMUtility::adminBuildUrl(''); ?>" type="button" class="btn btn-default <?php echo SCMUtility::navCanActive('',''); ?>">
                                     <span class="glyphicon glyphicon-dashboard"></span> Dashboard
                                 </a>
-                                <a href="<?php echo SCMUtility::adminBuildUrl('state=Settings&action=index'); ?>" type="button" class="btn btn-default">
+                                <a href="<?php echo SCMUtility::adminBuildUrl('state=Settings&action=index'); ?>" type="button" class="btn btn-default <?php echo SCMUtility::navCanActive('Settings','index'); ?>">
                                     <span class="glyphicon glyphicon-wrench"></span> Settings
                                 </a>
                             </div>
