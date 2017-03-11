@@ -1,0 +1,12 @@
+{
+    "require": {
+        "illuminate/database": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "SCM\\Classes\\": "classes",
+            "SCM\\Controller\\": "controller",
+            "SCM\\Model\\": "model"
+        }
+    }
+}

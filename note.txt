@@ -1,0 +1,11 @@
+To Change:
+
+- plugin folder name
+- scm main php file
+- search and replace SCM to any name
+
+On Define Constants:
+    define('SCM_FOLDER_NAME',   'scm-app-form');
+    define('SCM_ROUTE_HANDLE',	'scmAppFormModule');
+
+then do composer dump-autoload
