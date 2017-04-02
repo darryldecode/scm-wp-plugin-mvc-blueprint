@@ -1,0 +1,29 @@
+iframe {
+    border: none;
+}
+#mainNavWrapper {
+    margin-bottom: 10px;
+}
+#mainNavWrapper iframe {
+    border: none;
+}
+#scmFrontWrapper {
+    max-width: 100%;
+}
+#scmFrontWrapper td {
+    text-align: left;
+}
+#dynamicView {
+    margin-top: 20px;
+}
+.button-wide-holder {
+    margin-bottom: 20px;
+}
+.userAdditionalInfoTable {
+    margin-top: 20px;
+    display: none;
+}
+td.userMoreInfoData {
+    width: 35%;
+}
+

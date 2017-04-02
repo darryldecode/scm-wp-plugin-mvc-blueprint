@@ -1,0 +1,14 @@
+{
+    "require": {
+        "illuminate/database": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "SCM_BLUEPRINT\\Classes\\": "classes",
+            "SCM_BLUEPRINT\\Controller\\": "controller",
+            "SCM_BLUEPRINT\\Model\\": "model",
+            "SCM_BLUEPRINT\\Jobs\\": "jobs",
+            "SCM_BLUEPRINT\\Api\\": "api"
+        }
+    }
+}

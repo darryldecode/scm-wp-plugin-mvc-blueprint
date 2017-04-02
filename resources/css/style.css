@@ -1,0 +1,185 @@
+/* start BS 4 Compatibility Patch */
+.glyphicon {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+.glyphicon.glyphicon-calendar:before {
+    content: "\f073";
+}
+.glyphicon.glyphicon-chevron-left:before {
+    content: "\f053";
+}
+.glyphicon.glyphicon-chevron-right:before {
+    content: "\f054";
+}
+.uib-datepicker-popup {
+    padding: 10px;
+}
+.modal-dialog {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeInDown;
+}
+/* end BS 4 Compatibility Patch */
+
+
+.scm {
+    font-size: 85%;
+}
+.scm .nav,
+.scm .pagination,
+.scm .carousel,
+.scm .panel-title a {
+    cursor: pointer;
+}
+.scm a,
+.scm button {
+    cursor: pointer;
+}
+.scm .scm-input {
+    border-radius: 2px;
+    border: 1px solid #7c9eb2;
+    color: #7c9eb2;
+}
+.scm .scm-input-xs {
+    width: 40px;
+}
+.scm .scm-input .scm-input-wide {
+    width: 100%;
+}
+.scm a:focus,
+.scm a:hover {
+    text-decoration: none;
+}
+#mainNavWrapper {
+    margin-bottom: 10px;
+}
+#dynamicView {
+    margin-top: 20px;
+}
+.scm .course-name {
+
+}
+.scm .course-description {
+    width: 50%;
+}
+.scm .course-action {
+    width: 250px;
+}
+.scm .button-wide-holder {
+    margin-bottom: 20px;
+}
+.scm .userAdditionalInfoTable {
+    margin-top: 20px;
+    display: none;
+}
+.scm td.userMoreInfoData {
+    width: 35%;
+}
+.scm .card.scm-main-view {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+.scm .card.scm-main-view > div.card-header h3 {
+    color: #479acc;
+}
+.scm .card.scm-main-view .card-block {
+    min-height: 450px;
+}
+.scm .card.scm-main-view  .scm-view-body {
+    padding-top: 10px;
+    margin-top: 15px;
+}
+.scm .card.scm-main-view .scm-view-body .scm-provider-lists {
+    position: relative;
+}
+.scm .card.scm-main-view .scm-view-body .scm-loader-cover {
+    position: absolute;
+    z-index: 10;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    opacity: 0.6;
+    padding: 30px;
+    text-align: center;
+}
+.scm .card.scm-main-view .scm-filter-panel {
+    border-top: 1px solid #eaeaea;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #b5bcbf;
+    padding: 10px;
+}
+.scm .card.scm-main-view .scm-pagination {
+    margin: 20px 0;
+}
+.scm .card.scm-main-view .scm-pagination ul {
+
+}
+.scm .card.scm-main-view .scm-pagination ul li:first-child a {
+    border-left: 1px solid #0275d8;
+    border-radius: 2px 0 0 2px;
+}
+.scm .card.scm-main-view .scm-pagination ul li:last-child a {
+    border-radius: 0 2px 2px 0;
+}
+.scm .card.scm-main-view .scm-pagination ul li a {
+    padding: 3px 8px;
+    border-right: 1px solid #0275d8;
+    border-top: 1px solid #0275d8;
+    border-bottom: 1px solid #0275d8;
+}
+.scm .card.scm-main-view .scm-pagination ul li a:hover {
+    background: #00a0d2;
+    color: #ffffff;
+}
+.scm .card.scm-main-view .scm-pagination ul li.active a {
+    background: #00a0d2;
+    color: #ffffff;
+}
+.scm .scm-panel {
+    border: 1px solid #eaeaea;
+    border-radius: 3px;
+}
+.scm .scm-main-view ul.nav.nav-tabs a {
+    color: #479acc;
+}
+.scm .scm-main-view ul.nav.nav-tabs a.active {
+    font-weight: bold;
+}
+.scm .scm-settings .scm-settings-tbl tr:nth-child(2) > td:first-child {
+    width: 70%;
+}
+.scm .card.scm-main-view .scm-panel {
+    border: 1px solid #eaeaea;
+}
+.scm .card.scm-main-view .scm-panel .scm-panel-head {
+    padding: 15px;
+    background: #7c9eb2;
+    color: #ffffff;
+}
+.scm .card.scm-main-view .scm-panel .scm-panel-body {
+    padding: 15px;
+}
+.scm .card.scm-main-view .scm-dashboard {
+    margin-top: 20px;
+}
+.scm .card.scm-main-view .scm-sub-view-title {
+    color: #4397ca;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.scm-modal-header {
+    background: #7c9eb2;
+    color: #fff;
+}
+.scm-modal-header h3 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
